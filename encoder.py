@@ -6,7 +6,8 @@ import tensorflow as tf
 class EncoderLayer(tf.keras.layers.Layer):
     def __init__(self,n_heads,d_model,units):
         """
-        BERT Encoder layer class. The layer co
+        BERT Encoder layer class. The layer consist of the 
+        feed forward and multihead self atention layer 
 
         :param n_heads: num of attention heads
         :param d_model: embedding dimension
