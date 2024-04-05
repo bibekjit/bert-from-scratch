@@ -1,7 +1,15 @@
 # bert-from-scratch
+
 Implementation of bert from scratch
 
-BERT implementation from scratch using tensorflow including MLM and NSP pretrained
-The model is first pretrained for NSP then MLM
+Pretrained on MLM task only
 
-The pretrained model is then fine tuned for text classification of the IMDB review dataset
+## The training is divided in 2 phases
+
+1st phase is training short length sequences (maxlen = 60) and 2nd phase is for longer sequences (maxlen = 128)
+phase 1 is for learning word embeddings and phase 2 for positional embeddings
+
+this is done as the attention computation is quadratic, meaning it would cost more for (32, 128) compared to a (8, 512) input size
+where 8 and 32 are batch size and 128 and 512 are maxlen. 
+
+In this model, 
